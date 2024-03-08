@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+		"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+		"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQL8Dialect</property>
+        <property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+        <property name="hibernate.connection.password">8000</property>
+     <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/QUANLYTHONGTINSINHVIEN</property>
+        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.connection.password">8000</property>
+        <!--<property name="hibernate.hbm2ddl.auto">create-drop</property>Xóa và tạo lại từ đầu -->
+         <property name="hibernate.hbm2ddl.auto">update</property><!--Không nên dùng Xóa và tạo lại từ đầu 
+         mà nên dùng update mõi khi có cập nhật những thông tin mới-->
+         <property name="show_sql">true</property>
+          <property name="javax.persistence.validation.mode">none</property> <!-- Tắt validation tự động -->
+
+        <!-- Cấu hình Hibernate Validator -->
+        <property name="hibernate.validator.apply_to_ddl">false</property>
+        <property name="hibernate.validator.autoregister_listeners">false</property>
+         
+         
+        <!-- Mapping: là những class nào mà ta muốn tự tạo 1 cái table phía cơ sở dữ liệu -->
+        <mapping class="model.Khoa"/> 
+         <mapping class="model.GiangVien"/> 
+          <mapping class="model.ChuyenNganh"/> 
+           <mapping class="model.Lop"/> 
+            <mapping class="model.SinhVien"/>
+             <mapping class="model.DiaChi"/>  
+              <mapping class="model.DienThoai"/> 
+               <mapping class="model.MonThi"/> 
+                <mapping class="model.Thi"/> 
+                 <mapping class="model.DiemThi"/> 
+         
+    </session-factory>
+</hibernate-configuration>
